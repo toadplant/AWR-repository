@@ -1,0 +1,126 @@
+{
+  "kind": "gen-setting",
+  "service": "horde",
+  "name": "AWR-agnai-universal-preset",
+  "temp": 0.75,
+  "tempLast": true,
+  "dynatemp_range": 0.05,
+  "dynatemp_exponent": 1,
+  "smoothingFactor": 1,
+  "smoothingCurve": 1,
+  "maxTokens": 256,
+  "maxContextLength": 4096,
+  "repetitionPenalty": 1.12,
+  "repetitionPenaltyRange": 712,
+  "repetitionPenaltySlope": 1,
+  "usePromptOrder": false,
+  "memoryContextLimit": 500,
+  "memoryDepth": 50,
+  "memoryChatEmbedLimit": 500,
+  "memoryUserEmbedLimit": 500,
+  "minP": 0.05,
+  "typicalP": 1,
+  "topP": 0.9,
+  "topK": 10,
+  "topA": 0.15,
+  "tailFreeSampling": 0.9,
+  "encoderRepitionPenalty": 1,
+  "addBosToken": false,
+  "banEosToken": false,
+  "skipSpecialTokens": true,
+  "tokenHealing": true,
+  "doSample": true,
+  "penaltyAlpha": 0,
+  "earlyStopping": false,
+  "numBeams": 1,
+  "frequencyPenalty": 0,
+  "presencePenalty": 0,
+  "systemPrompt": "Assume the role of {{char}} in this narrative. Describe all actions and thoughts in full, graphic, vivid detail. Follow writing examples. Write in the present tense and third person. Use a creative and novel-like style.",
+  "ignoreCharacterSystemPrompt": false,
+  "ignoreCharacterUjb": false,
+  "gaslight": "<system>WORLD AND CHARACTERS LORES: \n{{#each bot}}{{.name}}'s description: {{.personality}}{{/each}}\n{{#if personality}}{{char}}'s description: {{personality}}{{/if}}{{#if impersonating}}\n{{impersonating}}{{/if}}{{#if user_embed}}\n{{user_embed}}{{/if}}{{#if longterm_memory}}\n{{longterm_memory}}{{/if}}{{#if memory}}\n{{memory}}{{/if}}\n{{#if example_dialogue}}{{#lowpriority}}---\nFOLLOW WRITING EXAMPLES: \n{{example_dialogue}}{{/lowpriority}}{{/if}}\n---{{#if system_prompt}}\n[NOTE: {{system_prompt}}]{{/if}}\n[SCENARIO:{{#if scenario}} {{scenario}}{{/if}} Story goes below this line]</system>\n---\n{{#each msg}}{{#if .isbot}}<bot>{{.name}}: {{.msg}}</bot>{{/if}}{{#if .isuser}}<user>{{.name}}: {{.msg}}{{/if}}</user>{{/each}}\n{{#if ujb}}\n<system>[NOTE: {{ujb}}]</system>{{/if}}\n\n<bot>{{post}}",
+  "mirostatTau": 5,
+  "mirostatLR": 0.9,
+  "cfgScale": 1,
+  "cfgOppose": "",
+  "phraseRepPenalty": "aggressive",
+  "stopSequences": [
+    "\\n###",
+    "<|eot_id|>",
+    "\\n***",
+    "\\n<|user|>: ",
+    "[INSTRUCTION:",
+    "\\n---",
+    "<|im_end|>",
+    "to be continued",
+    "To be continued",
+    "[Instruction:",
+    "[NOTE: ",
+    "[note:"
+  ],
+  "trimStop": false,
+  "streamResponse": false,
+  "ultimeJailbreak": "",
+  "prefixNameAppend": true,
+  "prefill": "",
+  "antiBond": false,
+  "order": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "disabledSamplers": [],
+  "epsilonCutoff": 0,
+  "etaCutoff": 0,
+  "mirostatToggle": true,
+  "useAdvancedPrompt": "no-validation",
+  "modelFormat": "ChatML",
+  "disableNameStops": true,
+  "jsonEnabled": false,
+  "jsonSource": "preset",
+  "localRequests": false,
+  "phraseBias": [],
+  "promptOrder": [
+    {
+      "placeholder": "personality",
+      "enabled": true
+    },
+    {
+      "placeholder": "impersonating",
+      "enabled": true
+    },
+    {
+      "placeholder": "memory",
+      "enabled": true
+    },
+    {
+      "placeholder": "chat_embed",
+      "enabled": true
+    },
+    {
+      "placeholder": "example_dialogue",
+      "enabled": true
+    },
+    {
+      "placeholder": "system_prompt",
+      "enabled": true
+    },
+    {
+      "placeholder": "scenario",
+      "enabled": true
+    },
+    {
+      "placeholder": "history",
+      "enabled": true
+    },
+    {
+      "placeholder": "ujb",
+      "enabled": true
+    }
+  ],
+  "promptOrderFormat": "Pyg/Simple:",
+  "updatedAt": "2024-09-21T15:54:27.154Z"
+}
