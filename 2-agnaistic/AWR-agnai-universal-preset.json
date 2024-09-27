@@ -1,7 +1,7 @@
 {
   "kind": "gen-setting",
-  "service": "horde",
-  "name": "AWR-agnai-universal-preset",
+  "service": "agnaistic",
+  "name": "arw-agnai-universal",
   "temp": 0.75,
   "tempLast": true,
   "dynatemp_range": 0.05,
@@ -12,16 +12,16 @@
   "maxContextLength": 4096,
   "repetitionPenalty": 1.12,
   "repetitionPenaltyRange": 712,
-  "repetitionPenaltySlope": 1,
+  "repetitionPenaltySlope": 0.3,
   "usePromptOrder": false,
   "memoryContextLimit": 500,
   "memoryDepth": 50,
   "memoryChatEmbedLimit": 500,
   "memoryUserEmbedLimit": 500,
-  "minP": 0.05,
+  "minP": 0.07,
   "typicalP": 1,
   "topP": 0.9,
-  "topK": 10,
+  "topK": 20,
   "topA": 0.15,
   "tailFreeSampling": 0.9,
   "encoderRepitionPenalty": 1,
@@ -56,7 +56,8 @@
     "To be continued",
     "[Instruction:",
     "[NOTE: ",
-    "[note:"
+    "[note:",
+    "<|end_of_text|>"
   ],
   "trimStop": false,
   "streamResponse": false,
@@ -72,18 +73,28 @@
     5,
     6
   ],
-  "disabledSamplers": [],
+  "disabledSamplers": [
+    0
+  ],
   "epsilonCutoff": 0,
   "etaCutoff": 0,
   "mirostatToggle": true,
   "useAdvancedPrompt": "no-validation",
-  "modelFormat": "ChatML",
-  "disableNameStops": true,
+  "modelFormat": "Alpaca",
+  "disableNameStops": false,
   "jsonEnabled": false,
   "jsonSource": "preset",
   "localRequests": false,
   "phraseBias": [],
   "promptOrder": [
+    {
+      "placeholder": "system_prompt",
+      "enabled": true
+    },
+    {
+      "placeholder": "scenario",
+      "enabled": true
+    },
     {
       "placeholder": "personality",
       "enabled": true
@@ -93,23 +104,15 @@
       "enabled": true
     },
     {
-      "placeholder": "memory",
-      "enabled": true
-    },
-    {
       "placeholder": "chat_embed",
       "enabled": true
     },
     {
+      "placeholder": "memory",
+      "enabled": true
+    },
+    {
       "placeholder": "example_dialogue",
-      "enabled": true
-    },
-    {
-      "placeholder": "system_prompt",
-      "enabled": true
-    },
-    {
-      "placeholder": "scenario",
       "enabled": true
     },
     {
@@ -121,6 +124,5 @@
       "enabled": true
     }
   ],
-  "promptOrderFormat": "Pyg/Simple:",
-  "updatedAt": "2024-09-21T15:54:27.154Z"
+  "promptOrderFormat": "Alpaca"
 }

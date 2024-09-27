@@ -1,0 +1,13 @@
+{
+    "story_string": "{{#if wiBefore}}{{wiBefore}}\n{{/if}}{{#if description}}{{description}}\n{{/if}}{{#if personality}}{{personality}}\n{{/if}}{{#if wiAfter}}{{wiAfter}}\n{{/if}}{{#if persona}}{{persona}}\n{{/if}}{{#if system}}{{system}}\n{{/if}}{{#if scenario}}[SCENARIO: {{scenario}}]\n{{/if}}",
+    "example_separator": "WRITING EXAMPLE",
+    "chat_start": "[NOTE: Story starts below this line]",
+    "use_stop_strings": true,
+    "allow_jailbreak": true,
+    "names_as_stop_strings": false,
+    "always_force_name2": false,
+    "trim_sentences": true,
+    "include_newline": true,
+    "single_line": false,
+    "name": "AWR-ST-context-template"
+}
